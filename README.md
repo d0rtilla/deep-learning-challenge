@@ -1,5 +1,23 @@
 # Unit 21 Homework: Charity Funding Predictor
 
+# Report: 
+
+## Overview:
+ Neural network and deep learning were used to determine if an applicant would be succesfully funded by Alphabet Soup, who has funded 34,000+ organizations in the past. 
+
+ ## Preprocessing:
+ Irrelevant information was removed from the data set: columns 'EIN' and 'NAME' were dropped from the model and everything that remained was considered a feature for the model. 'APPLICATION_TYPE' and 'CLASSIFICATION' were replaced with 'Other' due to high variance. The data was then split into training and tests sets. The target variable in the model is 'IS_SUCCESSFUL' and is confirmed by its value; 1 being a yes and 0 being a no. 'APPLICATION' data was analyzed, and the value of 'CLASSIFICATION' was used for binning. Each unique value used several data points as a cutoff point to bin scarce categorical values together in a new variable: 'Other'. Categorical variables were encoded with 'pd.get_dummies()'.
+
+ ## Compiling, Training, and Evaluation:
+ Neural Network was applie on all model layers. The number of features decided the number of hidden nodes.
+ A three-layer training model generated 477 parameters. The first attempt came close to the target of 75% accuracy with 72.6% accuracy.
+
+## Optimization:
+In the second attempt, the 'NAME' column was added back to the dataset. This increased accuracy to 78% which was over the target of 75% accuracy; generating 3,298 total parameters.
+
+## Conclusion:
+Deep learning models require multiple layers, as the computer needs to know how to filter input through different layers so it can learn how to predict and classify information that it recieves.
+
 ## Background
 
 The nonprofit foundation Alphabet Soup wants a tool that can help it select the applicants for funding with the best chance of success in their ventures. With your knowledge of machine learning and neural networks, you’ll use the features in the provided dataset to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup.
